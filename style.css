@@ -1,0 +1,117 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  padding: 0 10%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50rem;
+  margin: 150px;
+  background-color: bisque;
+  padding: 20px 15px 0 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.363);
+}
+
+.escolha {
+  display: flex;
+  margin: 3%;
+  width: 90%;
+  justify-content: center;
+  font-size: 16px;
+
+}
+
+#selecione {
+  width: 100px;
+  margin: 0.5rem;
+  width: 11rem;
+  border-radius: 10px;
+  font-family: 'poppins', sans-serif;
+  text-align: center;
+}
+
+#ocultarIncremento {
+  margin: 0.5rem;
+  font-family: 'poppins', sans-serif;
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  text-align: center;
+}
+
+.ocultarIncremento::placeholder{
+  color: rebeccapurple;
+}
+
+.metodo{
+  margin: 10px 20px;
+  color: rgb(37, 5, 41);
+  border-radius: 10px;
+}
+
+.mensagem-usuario {
+  display: flex;
+  width: 100%;
+}
+
+.texto{
+  resize: none;
+  font-size: 15px;
+  margin: 20px;
+  border: 2px 2px black;
+  border-radius: 3px;
+  width: 30rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.315);
+  height: 120px;
+  background: rgba(228, 212, 212, 0.363);
+}
+
+#botao {
+  width: 18%;
+  height: 30px;
+  padding: auto;
+  cursor: pointer;
+  margin: 20px;
+  margin-bottom: 2rem;
+  text-transform: none;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(231, 205, 172);
+  font-weight: 600;
+}
+
+#botao:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+
+
+@media (min-width: 1400px) {
+  /* estilos aqui */
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70rem;
+      margin: 245px;
+      background-color: bisque;
+      padding: 20px 15px 0 20px;
+      margin-top: 2rem;
+      box-shadow:0 5px 15px rgba(0, 0, 0, .5) 
+      }

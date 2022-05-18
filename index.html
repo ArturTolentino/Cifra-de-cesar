@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="logicacifra.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <form action="" class="container">
+        <h1>Cifra de Cesar</h1>
+        <p>Cifre sua mensagem é a deixe segura 🔓</p>
+        <section class="escolha">
+          <!-- BOTÕES DE ESCOLHA // select dando 2 opções //b64 ou cifra -->
+          <select name="selecione" id="selecione">
+            <option value="metodo" disabled selected>Escolha sua opção</option>
+            <option value="ccesar">Cifra de César</option>
+            <option value="base64">Base64</option>
+          </select>
+          <!-- precisa ser um botão RADIO -->
+          <input
+            class="ocultarIncremento" id="ocultarIncremento" type="number" placeholder="Escolha os passos!"/>
+          <div class="metodo">
+
+            <!-- Codificar e decodificar -->
+
+            <input checked type="radio" id="codificar" name="escolhaDeMetodo" value="codificar"/>
+            <label for="escolhaDeMetodo">Codificar</label>
+          </div>
+          <div class="metodo">
+            <input type="radio" id="decodificar" name="escolhaDeMetodo" />
+            <label for="escolhaDeMetodo">Decodificar</label>
+          </div>
+
+
+        </section>
+        <!-- BOX DE MENSAGENS -->
+        <section class="mensagem-usuario">
+          <textarea class="texto" name="texto-usuario" id="escrever" cols="33" rows="10"></textarea>
+          <textarea class="texto" name="texto-usuario" id="resultado" cols="33" rows="10" readonly></textarea>
+        </section>
+        <button type="button" id="botao" onclick="cifrarTexto()">Cifra de Cesar</button>
+      
+      </form>
+    </div>
+  </body>
+</html>
