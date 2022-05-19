@@ -10,7 +10,16 @@ decodificar.addEventListener("click", function(){
 })
 
 
+let esconderCodigo = document.querySelector('#esconderIncremento')
 
+metodo.addEventListener('change', function (#esconderIncremento){
+  let codigoEscondido = tipoDeCodigo.target.value
+
+    if (metodo == 'base64') {
+      esconderIncremento.style.display ='none'
+      botao.setAttribute('onclick', cifrarTexto() )
+    }
+})
 
 
 function cifrarTexto() {
@@ -33,7 +42,7 @@ function algoritmoCifrar(mensagem, desloc) {
   let textoAcumulado = "";
   for (let i in mensagem) {
     textoManipulado[i] = mensagem.charCodeAt(i);
-
+    if(textoManipulado)
     if (
       (textoManipulado[i] >= 65 && textoManipulado[i] <= 90 + desloc) ||
       (textoManipulado[i] >= 97 && textoManipulado[i] <= 122 + desloc)
