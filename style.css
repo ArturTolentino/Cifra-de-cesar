@@ -49,7 +49,7 @@ body{
 }
 
 #ocultarIncremento {
-  display: none;
+  /* display: none; */
   margin: 0.5rem;
   font-family: 'poppins', sans-serif;
   border-radius: 10px;
