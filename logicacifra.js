@@ -9,33 +9,50 @@ decodificar.addEventListener("click", function(){
   document.getElementById("botao").setAttribute("onclick", "decifrarTexto()")
 })
 
+let ocultarIncremento = document.getElementById("ocultarIncremento")
 
-let esconderCodigo = document.querySelector('#esconderIncremento')
+let select = document.getElementById("selecione")
+  select.addEventListener("change", ()=>{
+    let option = select.value;
+      if(option == "ccesar") {
+        ocultarIncremento.style.display="block"
+      } else {
+        ocultarIncremento.style.display="none"
+      }
+  })
 
-metodo.addEventListener('change', function (#esconderIncremento){
-  let codigoEscondido = tipoDeCodigo.target.value
+  let escrever = document.getElementById("escrever")
+  let resultado = document.getElementById("resultado")
+  
 
-    if (metodo == 'base64') {
-      esconderIncremento.style.display ='none'
-      botao.setAttribute('onclick', cifrarTexto() )
+  function cifrarTexto(){
+    resultado.value = select.value == "ccesar" ?algoritmoCifrar(escrever.value ,Number(ocultarIncremento.value)):btoa(escrever.value)
+  }
+
+  function decifrarTexto(){
+    if(select.value == "ccesar"){
+     let chaveReversa = Number(ocultarIncremento.value)*-1 + 26
+     resultado.value = algoritmoCifrar(escrever.value, chaveReversa)
+     return 
     }
-})
+    resultado.value = atob(escrever.value)
+  }
 
+// function cifrarTexto() {
+//   document.getElementById("resultado").value = algoritmoCifrar(
+//     document.getElementById("escrever").value,
+//     Number(ocultarIncremento.value)
+//   );
+// }
 
-function cifrarTexto() {
-  document.getElementById("resultado").value = algoritmoCifrar(
-    document.getElementById("escrever").value,
-    Number(document.getElementById("ocultarIncremento").value)
-  );
-}
+// function decifrarTexto() {
+//   let chaveReversa = Number(document.getElementById("ocultarIncremento").value)*-1 + 26
+//   document.getElementById("resultado").value = algoritmoCifrar(
+//     document.getElementById("escrever").value,
+//     chaveReversa
+//   );
+// }
 
-function decifrarTexto() {
-  let chaveReversa = Number(document.getElementById("ocultarIncremento").value)*-1 + 26
-  document.getElementById("resultado").value = algoritmoCifrar(
-    document.getElementById("escrever").value,
-    chaveReversa
-  );
-}
 
 function algoritmoCifrar(mensagem, desloc) {
   let textoManipulado = [];
@@ -63,5 +80,4 @@ function algoritmoCifrar(mensagem, desloc) {
   }
   return textoAcumulado;
 }
-
 
